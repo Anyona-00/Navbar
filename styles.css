@@ -1,0 +1,105 @@
+/*box-sizing property in CSS is used to control how the total width and height of an element are calculated.
+(border-box: In this model, the width and height of an element include both its content and any padding and border. 
+This means that if you set the width to be 200 pixels, that 200 pixels includes both the content, padding, and border.)*/
+*{
+box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.brand-title{
+    color: white;
+    font-size: 2rem;
+    margin: .5rem;
+}
+
+
+.navbar-links ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.navbar-links ul li{
+   list-style: none;
+}
+
+
+.navbar-links ul li a{
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding: 2rem;
+
+}
+
+
+.navbar-links ul li a:hover{
+    background-color: gray;
+}
+
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+    width: 30px;
+}
+
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+   background-color: white;
+   border-radius: 10px;
+
+}
+
+/*the code in here is only executed when the conditons are met*/
+@media (max-width: 600px) {
+    .toggle-button{
+display: flex;
+    }   
+    
+    .navbar-links{
+        display: none;
+       width: 100%;
+    }
+
+    .navbar-links ul{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links ul li{
+        text-align: center;
+    }
+
+    .navbar-links ul li a{
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active{
+        display: flex;
+    }
+}
